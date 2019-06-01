@@ -98,5 +98,16 @@ function concertThis() {
 }
 
 function doWhatItSays() {
+    fs.readFile("random.txt", "utf8", function (error, data) {
+        if (error) {
+            return console.log(error);
+        }
+        var array = data.split(",");
 
+        if (array[0] == "spotify-this-song") {
+            spotifySearch(array[1]);
+        } else if (array[0] == "movie-this") {
+            movieThis(array[1]);
+        }
+    });
 }
