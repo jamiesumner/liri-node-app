@@ -38,7 +38,7 @@ function spotifySearch() {
                 return console.log('Error occurred: ' + err);
             }
             // only console logs all the data - need to specify what to console log
-            console.log(JSON.stringify(data, null, 2));
+            console.log(JSON.stringify(data));
         });
     } else {
         spotify.search({ type: 'track', query: input }, function (err, data) {
